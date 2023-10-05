@@ -5,8 +5,12 @@
 # Outputs    ##
 ###############
 
-# Add outputs for the resource
-# output "template_example" {
-#  value       = template.name
-#  description = "Resource group name"
-# }
+output "id" {
+  description = "The unique identifier of the ARM template deployment."
+  value       = azurerm_subscription_template_deployment.subscription_deploy.id
+}
+
+output "output_content" {
+  description = "The JSON content of the outputs of the ARM template deployment."
+  value       = azurerm_subscription_template_deployment.subscription_deploy.output_content
+}
